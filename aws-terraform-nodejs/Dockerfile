@@ -7,7 +7,9 @@ RUN apt-get update && \
     # fix "add-apt-repository: command not found"
     ca-certificates \
     # fix "apt-add-repository: not found"
-    software-properties-common
+    software-properties-common \
+    # fix "[Errno 2] No such file or directory: 'less'" on lambda invoke
+    less
 
 # https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2-linux.html
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
